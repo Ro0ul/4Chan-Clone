@@ -1,0 +1,14 @@
+{
+    "name": "saadn/4chan-clone",
+    "description": "4Chan Clone Made with PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "bramus/router": "^1.6",
+        "twig/twig": "^3.7"
+    }
+}

@@ -1,0 +1,35 @@
+#boards{
+    border: 2px solid black;
+    margin-top: 20px;
+    background-color: white;
+}
+#boards-upper-box{
+    background-color: #fca;
+    color: #800;
+}
+#boards-upper-box h3{
+    margin-left: 8px;
+}
+#boards-list h3{
+    color: #800;
+    text-decoration: underline;
+}
+#boards-list{
+    line-height: 130%;
+    display: flex;
+    padding: 7px;
+}
+#boards-list #column a{
+    color: #800;
+    text-decoration: none;
+}
+#boards-list #column a:hover{
+    text-decoration: underline;
+    color: #e00;
+}
+#boards-list #column li{
+    list-style-type: none;
+}
+#column{
+    width: 12em;
+}

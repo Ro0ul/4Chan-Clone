@@ -1,0 +1,52 @@
+body,html{
+    background: #eef2ff;
+}
+header,
+main{
+width: 100vw;
+}
+#upper-body-start-thread h3 span:hover{
+    color: #d00 !important;
+}
+#table tr td:first-child{
+    background-color: #98e;
+    color: #000;
+    font-weight: 700;
+    border: 1px solid #000;
+    padding: 0 5px;
+    font-size: 10pt;
+}
+#upper-body{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: .75rem;
+}
+#upper-body input, textarea{
+    font-size: 18px;
+}
+#uppber-body hr{
+    width: 100vw;
+}
+#mid-body{
+    padding: .25rem;
+}
+#mid-body input{
+    padding: 2px;
+    font-size: 15px;
+}
+#posts{
+    padding: 1.25rem;
+}
+#posts #post{
+    margin: 20px 0;
+}
+#post{
+    max-width: 60vw;   
+}
+#post #top-desc{
+    gap: .75rem;
+}
+#post #top-desc #bottom #upper-bottom{
+    gap: 10px;
+}

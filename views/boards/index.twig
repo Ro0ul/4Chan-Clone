@@ -1,0 +1,118 @@
+{% extends "templates/master.twig" %}
+{% block style %}
+    <link rel="stylesheet" href="/assets/css/boards.css">
+{% endblock %}
+{% block body %}
+    <div id="upper-body">
+        <div id="upper-body-boads">
+            [
+            {% for boards in allBoards %}
+                <a href="/boards/{{boards}}">{{boards}}</a>
+                /
+            {% endfor %}
+            ]
+        </div>
+        <hr />
+        <div id="upper-body-logo">
+            <a href="/">
+                <img src="/assets/images/25.jpg" alt="{{board}}">
+            </a>
+            <hr>
+            <div id="board-name">
+                <h1>/{{board}}/</h1>
+            </div>
+        </div>
+        <hr>
+        <div id="upper-body-start-thread">
+            <h3>
+                [ <span id="show-thread-start" style="cursor: pointer;">Start A Thread</span> ]
+            </h3>
+            <div id="start-thread-here" style="display:none;">
+                <form action="/boards/{{board}}/new" method="post" enctype="multipart/form-data">
+                    <table id="table">
+                        <tr>
+                            <td>
+                                Name
+                            </td>
+                            <td>
+                                <input type="text" name="name" placeholder="Anonymous">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Title</td>
+                            <td>
+                                <input type="text" name="title">
+                                <button>Post</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Body</td>
+                            <td>
+                                <textarea name="body" id="" cols="30" rows="10"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Verification</td>
+                            <td>
+                                <input type="text" name="captcha">
+                                <input type="hidden" name="board" value="{{board}}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>File ( optional )</td>
+                            <td>
+                                <input type="file" name="file" id="">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                    
+                    
+                    <hr>
+            </div>
+            {% if error %}
+                        <div id="errors" style="font-size: 20px; color: red;">
+                            <p>Name Must not have 25 characters</p>
+                            <p>Body Must Not Have 500 Characters</p>
+                            <p>Title Must not have 50 characters</p>
+                            <p>Verification Must be 1234</p>
+                            <p>Image Must not have 900px in width and 700 in height</p>
+                        </div>
+                    {% endif %}
+        </div>
+    </div>
+    <div id="mid-body">
+        <form action="/boards/{{board}}/search" method="get">
+            <input type="text" placeholder="Search" name="q" id="">
+        </form>
+    </div>
+    <hr>
+    <div id="posts">
+        {% for currentBoard in boards %}
+            <div id="post">
+            <p>File : <a href={{currentBoard["image_src"]}}>{{currentBoard["image_src"]}}</a></p>
+            <div id="top-desc" style="display: flex;">
+                <div id="mid" style="display: flex;">
+                    <img src="{{currentBoard["image_src"]}}" alt="">
+                </div>
+                <div id="bottom">
+                    <div id="upper-bottom" style="display: flex;">
+                        <p id="title">{{currentBoard["title"]}}</p>
+                        <p id="author" style="color: green;">Anonymous</p>
+                        <p>{{currentBoard["posted_at"]}}</p>
+                        <div id="reply">
+                            [ <a href="/boards/{{board}}/thread/threadid/" style="cursor: pointer;">Reply</a> ]
+                        </div>
+                    </div>
+                    <br>
+                    <p>{{currentBoard["body"]}}
+                    </p>
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="/assets/js/boards.js"></script>
+{% endblock %}

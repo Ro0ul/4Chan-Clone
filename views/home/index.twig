@@ -1,0 +1,40 @@
+{% extends "templates/master.twig" %}
+{% block style %}
+    <link rel="stylesheet" href="/assets/css/home.css">
+{% endblock %}
+{% block body %}
+    {% include "components/navbar.twig" %}
+    <br />
+    <div id="boards">
+        <div id="boards-upper-box">
+            <h3>Boards</h2>
+        </div>
+        <div id="boards-bottom-box">
+            <ul id="boards-list">
+                <div id="column">
+                    <h3>Japanese Culture</h3>
+                    <li><a href="/boards/aam">Anime & Manga</a></li>
+                    <li><a href="/boards/ac">Anime / Cute</a></li>
+                    <li><a href="/boards/aw">Anime / Wallpapers</a></li>
+                </div>
+                <div id="column">
+                    <h3>Video Games</h3>
+                    <li><a href="/boards/vgg">Video Games Generals</a></li>
+                   <li><a href="/boards/vg">Video Games</a></li>
+                    <li><a href="/boards/vgr">Video Games RPG</a></li>
+                    <li><a href="/boards/vgs">Video Games Strategy</a></li>
+                    <li><a href="/boards/vgrt">Video Games Retro</a></li>
+                </div>
+                <div id="column">
+                    <h3>Interests</h3>
+                    <li><a href="/boards/t">Technology</a></li>
+                    <li><a href="/boards/cac">Comics & Cartoon</a></li>
+                    <li><a href="/boards/taf">Television & Film</a></li>
+                    <li><a href="/boards/w">Weapons</a></li>
+                    <li><a href="/boards/sam">Science & Math</a></li>
+                    <li><a href="/boards/s">Sports</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
